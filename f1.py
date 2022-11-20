@@ -7,15 +7,17 @@ You must write an algorithm with O(log n) runtime complexity.   '''
 
 
 def binarysearch(nums,target):
-    low = -1
-    high = len(nums)
+    low = 0
+    high = len(nums) - 1
 
-    while low != high:
+    while low <= high:
         mid = (low + high) // 2
         if nums[mid] == target:
             return mid
         elif nums[mid] < target:
-            low = mid
+            low = mid + 1
         else :
             high = mid - 1
     return -1
+a = binarysearch([1],1)
+print(a)
